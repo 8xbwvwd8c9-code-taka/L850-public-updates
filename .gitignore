@@ -1,0 +1,22 @@
+# Defense-in-depth only; .gitignore does not prevent git add -f or UI uploads.
+*.exe
+*.dll
+*.bin
+*.bin2
+*.zip
+*.7z
+*.rar
+*.pfx
+*.p12
+*.pem
+*.key
+*.env
+.env.*
+*secret*
+*token*
+*credentials*
+/private/
+/client/
+/launcher/
+/server/
+/artifacts/
