@@ -62,3 +62,8 @@ The user suggested `WebView2 fetch()` instead of an additional Rust HTTP depende
 ## 2026-10-10 — Full V0.3 pasted plan: PARTIAL_PASS static review
 
 Full V0.3 text reviewed, including URL validator Rust sample, message flow and schema. Current plan retains `PLAN_ONLY`, `published=false`, and `AUTO_EAT=PAUSED`. Engineering corrections and agent task: `docs/V03_FULL_ARCHITECTURE_REVIEW_20261010.md`. **Source checks required**: Rust must parse and validate URI components (not only string prefix), optional `release_notes` and `mandatory=false` must match public schema, `release_id` must not be lexically ordered as time, and test counts must be taken from current HEAD. Windows WebView2 CORS test remains unexecuted. No source change or live release.
+
+
+## 2026-10-10 — V0.4 architecture conditional PASS (PLAN ONLY)
+
+Canonical scoped adjudication: `docs/V04_ARCHITECTURE_ADJUDICATION_20261010.md`. Three corrections: C1 strict Drive path validation without filtering empty segments/ambiguous query; C2 local installed receipt missing means `InstallStatusUnknown`, not proven red/newer; C3 all update states retain independent existing game launch/security gates. Public manifest remains `published=false, release=null`. Rust GUI/updater implementation, Windows x86 CORS runtime validation, releases and eat.exe remain NOT DONE / PAUSED.
