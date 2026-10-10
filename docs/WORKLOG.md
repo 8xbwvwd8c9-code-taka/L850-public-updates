@@ -28,3 +28,9 @@
 - V0.4 architecture assessed `CONDITIONAL_PASS`; full file `docs/V04_ARCHITECTURE_ADJUDICATION_20261010.md`.
 - Closed planning guidance for C1 strict URL path/encoding/query, C2 missing installed receipt cannot be treated as newer, C3 update check must not override existing launch guards; actual CORS and dynamic tests NOT_RUN.
 - No changes to shipped Rust, private game source, public manifest, Drive ZIP, auto-download/eat or runtime.
+
+
+## 2026-10-10 — V0.5 spec approved, feature remains paused
+
+- Scoped spec: `docs/V05_APPROVED_SPEC_20261010.md`. Strict canonical URLs with query/normalization cases, local receipt unknown state, mismatch-not-necessarily-newer, safety gates unchanged and actual test outputs.
+- `PUBLIC_RELEASE=NONE; RUST_SOURCE=UNCHANGED; CORS=UNTESTED; AUTO_DOWNLOAD=PAUSED; AUTO_EAT=PAUSED`.
