@@ -14,3 +14,10 @@
 - User's suggestion to use JS `fetch()` and existing IPC conditionally accepted in DESIGN only; WinHTTP read-only OS fallback if fetch blocked. No new Rust network dependency approved.
 - Separate update indicators GREEN/RED/UNKNOWN/UNPUBLISHED from game-launch readiness; `CheckFailed=UNKNOWN`, while the preexisting launch eligibility remains unchanged. Manual Google Drive link only from approved sources; distinguish Check updates from Open download behavior.
 - `STATUS=PLANNING_ONLY_PAUSED`; `PUBLIC_MANIFEST_PUBLISHED=FALSE`; `RUST_SOURCE_TOUCHED=NO`; `WIN_X86_CORS_PASS=NOT_PROVEN`.
+
+
+## 2026-10-10 — Full V0.3 plan static review
+
+- User pasted complete V0.3 architecture text; recorded conditional PASS with explicit corrections in `docs/V03_FULL_ARCHITECTURE_REVIEW_20261010.md`.
+- Findings: Rust URL prefix validator not sufficient, public schema optional `release_notes` conflict with required Rust String, `mandatory=false` enforcement, version ordering ambiguity, CORS/WinHTTP qualification and live test count evidence.
+- `PLANNING_ONLY=YES; UPDATE_NOTICE_NOT_IMPLEMENTED; STABLE_MANIFEST_PUBLISHED=FALSE; AUTO_DOWNLOAD_AND_EAT=PAUSED; GAME_LAUNCH_UNCHANGED`.
