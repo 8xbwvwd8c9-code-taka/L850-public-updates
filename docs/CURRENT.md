@@ -67,3 +67,8 @@ Full V0.3 text reviewed, including URL validator Rust sample, message flow and s
 ## 2026-10-10 — V0.4 architecture conditional PASS (PLAN ONLY)
 
 Canonical scoped adjudication: `docs/V04_ARCHITECTURE_ADJUDICATION_20261010.md`. Three corrections: C1 strict Drive path validation without filtering empty segments/ambiguous query; C2 local installed receipt missing means `InstallStatusUnknown`, not proven red/newer; C3 all update states retain independent existing game launch/security gates. Public manifest remains `published=false, release=null`. Rust GUI/updater implementation, Windows x86 CORS runtime validation, releases and eat.exe remain NOT DONE / PAUSED.
+
+
+## 2026-10-10 — V0.5 approved design specification (PLAN ONLY)
+
+The newest spec is `docs/V05_APPROVED_SPEC_20261010.md`. `SPEC_STATUS=APPROVED_WITH_IMPLEMENTATION_NOTES`; strict URL validation, distinct unknown installed status, preservation of launch gates, dynamic tests. `published=false`, `release=null` remains; x86 CORS OPEN; coding needs separate user authorization. V0.4 is historical.
