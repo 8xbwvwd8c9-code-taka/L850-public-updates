@@ -56,3 +56,8 @@ Do not commit private content, new real Drive links, real hashes that were not i
 ## RETURN
 
 `HEAD|PUBLIC=YES|MANIFEST_URL|UNPUBLISHED=YES|SCHEMA_OK|DOCS_OK|PRIVATE_MIRROR=NO|CODE_TOUCHED=NO|NEXT=WAIT_FOR_EXPLICIT_AUTHORIZATION`
+
+
+## WebView2 UI/IPC proposal review (documentation only)
+
+User-proposed WebView2 JS `fetch()` plus existing Rust Wry IPC is a **conditional** design choice, not an accepted runtime PASS. Read `docs/WEBVIEW2_NOTICE_DESIGN_20261010.md` and review the `with_html` origin `null`, GitHub Raw CORS compatibility, bounded `UpdateManifestObserved` IPC, valid published schema and independent update/game-launch indicators. The existing `檢查更新` label means recheck; `雲端硬碟` opens the approved browser link; when a newer release exists, use a visibly labeled `下載更新` CTA rather than a silently repurposed check button. Network failure is UNKNOWN (not green) and never a new game-launch block. No actual Windows CORS or anonymous raw fetch PASS is claimed, and source/EXE changes remain STOP.
