@@ -39,3 +39,21 @@ Read `README.md` → `docs/CURRENT.md` → `docs/AGENT_TASK.md` → `docs/PUBLIS
 ## Invariants
 
 Published update means a new `release_id`, nonzero actual bytes, actual SHA256 of final ZIP, valid public Drive URL, schema validation and review. For a disabled manifest or network outage, the future Launcher must continue the original launch path and must not falsely claim latest version.
+
+
+## 2026-10-10 — WebView2 notification design review
+
+```text
+SCOPED_DESIGN=docs/WEBVIEW2_NOTICE_DESIGN_20261010.md
+WEBVIEW_FETCH=CONDITIONAL_PENDING_WINDOWS_X86_CORS_TEST
+CURRENT_WRY_WITH_HTML_ORIGIN=null
+PUBLIC_GITHUB_RAW_CORS=NOT_VERIFIED
+IPC_REUSE=EXISTING_WRY_WITH_IPC_HANDLER
+NETWORK_FAILURE_UPDATE_LIGHT=UNKNOWN_GRAY_AMBER_NOT_GREEN
+GAME_LAUNCH_GATE=INDEPENDENT_UNCHANGED
+MANUAL_DRIVE_BUTTON=APPROVED_URL_ONLY
+PUBLIC_MANIFEST=UNPUBLISHED
+NOTICE_IMPLEMENTATION=PAUSED
+```
+
+The user suggested `WebView2 fetch()` instead of an additional Rust HTTP dependency and a manual Google Drive button. This is acceptable conditionally; the actual private Rust Wry GUI uses `with_html()` (a `null`-origin page) and existing IPC. Fetching GitHub Raw JSON through WebView2 requires a real Windows CORS check; never use `no-cors` to work around readable content. Keep the existing game launch readiness signal distinct from the future update indicator: failed checking is UNKNOWN, not green. Full design and agent acceptance requirements are in `docs/WEBVIEW2_NOTICE_DESIGN_20261010.md`. No source, release, deployment or automatic patch changes authorized.
