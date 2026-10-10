@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "channel": "stable",
+  "published": true,
+  "release": {
+    "release_id": "2026.10.11-B",
+    "display_version": "10/11 B版（示例）",
+    "file_name": "L850_Update.zip",
+    "size_bytes": 0,
+    "sha256": "REPLACE_WITH_ACTUAL_64_HEX_SHA256",
+    "download_url": "https://drive.google.com/file/d/REPLACE_WITH_PUBLIC_FILE_ID/view",
+    "mandatory": false,
+    "release_notes": "純示例；這份 JSON 故意無法通過 schema，不得複製成正式發布版本。"
+  }
+}
