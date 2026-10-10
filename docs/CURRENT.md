@@ -57,3 +57,8 @@ NOTICE_IMPLEMENTATION=PAUSED
 ```
 
 The user suggested `WebView2 fetch()` instead of an additional Rust HTTP dependency and a manual Google Drive button. This is acceptable conditionally; the actual private Rust Wry GUI uses `with_html()` (a `null`-origin page) and existing IPC. Fetching GitHub Raw JSON through WebView2 requires a real Windows CORS check; never use `no-cors` to work around readable content. Keep the existing game launch readiness signal distinct from the future update indicator: failed checking is UNKNOWN, not green. Full design and agent acceptance requirements are in `docs/WEBVIEW2_NOTICE_DESIGN_20261010.md`. No source, release, deployment or automatic patch changes authorized.
+
+
+## 2026-10-10 — Full V0.3 pasted plan: PARTIAL_PASS static review
+
+Full V0.3 text reviewed, including URL validator Rust sample, message flow and schema. Current plan retains `PLAN_ONLY`, `published=false`, and `AUTO_EAT=PAUSED`. Engineering corrections and agent task: `docs/V03_FULL_ARCHITECTURE_REVIEW_20261010.md`. **Source checks required**: Rust must parse and validate URI components (not only string prefix), optional `release_notes` and `mandatory=false` must match public schema, `release_id` must not be lexically ordered as time, and test counts must be taken from current HEAD. Windows WebView2 CORS test remains unexecuted. No source change or live release.
