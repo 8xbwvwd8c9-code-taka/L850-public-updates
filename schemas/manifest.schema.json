@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/8xbwvwd8c9-code-taka/L850-public-updates/main/schemas/manifest.schema.json",
+  "title": "L850 public update notice manifest v1",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema": {
+      "const": 1
+    },
+    "channel": {
+      "const": "stable"
+    },
+    "published": {
+      "type": "boolean"
+    },
+    "release": {
+      "type": [
+        "null",
+        "object"
+      ]
+    }
+  },
+  "required": [
+    "schema",
+    "channel",
+    "published",
+    "release"
+  ],
+  "oneOf": [
+    {
+      "properties": {
+        "published": {
+          "const": false
+        },
+        "release": {
+          "type": "null"
+        }
+      }
+    },
+    {
+      "properties": {
+        "published": {
+          "const": true
+        },
+        "release": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "release_id": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,79}$"
+            },
+            "display_version": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 80
+            },
+            "file_name": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,127}\\.zip$"
+            },
+            "size_bytes": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[a-fA-F0-9]{64}$"
+            },
+            "download_url": {
+              "type": "string",
+              "pattern": "^https://drive\\.google\\.com/file/d/[A-Za-z0-9_-]+/view(?:\\?.*)?$"
+            },
+            "mandatory": {
+              "const": false
+            },
+            "release_notes": {
+              "type": "string",
+              "maxLength": 1200
+            }
+          },
+          "required": [
+            "release_id",
+            "display_version",
+            "file_name",
+            "size_bytes",
+            "sha256",
+            "download_url",
+            "mandatory"
+          ]
+        }
+      }
+    }
+  ]
+}
